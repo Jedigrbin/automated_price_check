@@ -1,0 +1,54 @@
+#####################      HERE COMES THE CONTENTS OF EACH SCRIPTS/FILES IN THIS REPO      ######################
+
+
+
+1. codes.txt
+---------------------
+This file contains all the available product codes of Bookers products. There are 116 at this point of time.
+
+2. products.txt
+---------------------
+This file contains info as CODE<TAB>PRODUCT<TAB>OLD_PRICE
+This file can be merged with new_prices.txt using the merge_prices.py script or join command to get results.txt.
+
+3. price_check.py
+---------------------
+This python script can be executed using python3 and will give new_prices.txt, containing new prices
+
+4. new_prices.txt
+---------------------
+This contain info as CODE<TAB>NEW_PRICES
+
+5. merge_prices.py
+---------------------
+This python script helps merge products.txt and new_prices.txt to get final result
+
+6.  results.txt
+---------------------
+This file contains info as CODE<TAB>PRODUCT<TAB>OLD_PRICE<TAB>NEW_PRICE<TAB>CHANGE
+If there is any change in price, it shows 'Y' and if unchanged, 'N'
+
+9. get_result_and_changes.py
+---------------------
+Unlike merge.py script, this script gives a result.txt file and changes_items.txt file with only the changed items
+
+
+
+
+>>>>>>>>>>>>>>>>>>>> to merge products.txt with new_prices.txt with join command :
+                     join -t $'\t' -1 1 -2 1 products.txt new_prices.txt > results.txt <<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+
+$$$$$$$$$$$$$$$$$$$$$$       HOW TO RUN THE PRICE CHECK      $$$$$$$$$$$$$$$$$$$$$$$
+
+
+1. Run the price_check.py script as ---->  python3 price_check.py
+   After a few minutes, you'll get a new text file - new_prices.txt
+2. Now, run the merge_prices.py script as ----> python3 merge_prices.py
+   This will merge the new_prices.txt and products.txt to give the final result ----> results.txt
+
+
+If you want to see only the changed items, directly run the get_result_and_changes.py script once you get the new_prices.txt file as ----> python3 get_result_and_changes.py
+   This will give changed_items.txt which contains the price changed items along with the results.txt file. 
